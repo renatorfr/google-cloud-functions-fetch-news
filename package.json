@@ -1,0 +1,8 @@
+{
+  "name": "google-cloud-functions-fetch-news",
+  "version": "0.0.1",
+  "dependencies": {
+    "eslint": "^5.3.0",
+    "request": "^2.87.0"
+  }
+}
