@@ -7,11 +7,12 @@
 const request = require('request');
  
 exports.fetchNews = (req, res) => {
-  request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, response, body) => {
+  const message = request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
     if (err) {
       return console.log(err);
     }
-    const message = body.url + ' ||| ' + body.explanation;
-    res.status(200).send(message);
+    return body.url + ' ||| ' + body.explanation;
   });
+
+  res.status(200).send(message);
 };
